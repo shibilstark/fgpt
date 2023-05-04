@@ -1,4 +1,5 @@
 // ignore_for_file: constant_identifier_names
+import 'package:fgpt_ai/presentation/screens/home/home_screen.dart';
 import 'package:fgpt_ai/presentation/screens/landing/landing_screen.dart';
 import 'package:fgpt_ai/presentation/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,10 @@ class AppRouter {
       case LANDING_SCREEN:
         return MaterialPageRoute(
           builder: (context) => const LandingScreen(),
+        );
+      case HOME_SCREEN:
+        return MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
         );
 
       default:

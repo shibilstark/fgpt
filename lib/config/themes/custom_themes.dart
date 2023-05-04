@@ -28,22 +28,27 @@ class CustomThemes {
     ),
     textTheme: TextTheme(
       titleLarge: TextStyle(
+        letterSpacing: 1.1,
         color: Palette.black,
         fontSize: AppFontSize.titleLarge,
       ),
       titleSmall: TextStyle(
+        letterSpacing: 1.1,
         color: Palette.primary,
         fontSize: AppFontSize.titleSmall,
       ),
       bodyLarge: TextStyle(
+        letterSpacing: 1.1,
         color: Palette.textBlack,
         fontSize: AppFontSize.bodyLarge,
       ),
       bodyMedium: TextStyle(
+        letterSpacing: 1.1,
         color: Palette.textBlack,
         fontSize: AppFontSize.bodyMedium,
       ),
       bodySmall: TextStyle(
+        letterSpacing: 1.1,
         color: Palette.textBlack,
         fontSize: AppFontSize.bodySmall,
       ),
@@ -75,22 +80,27 @@ class CustomThemes {
     ),
     textTheme: TextTheme(
       titleLarge: TextStyle(
+        letterSpacing: 1.1,
         color: Palette.white,
         fontSize: AppFontSize.titleLarge,
       ),
       titleSmall: TextStyle(
+        letterSpacing: 1.1,
         color: Palette.primary,
         fontSize: AppFontSize.titleSmall,
       ),
       bodyLarge: TextStyle(
+        letterSpacing: 1.1,
         color: Palette.textWhite,
         fontSize: AppFontSize.bodyLarge,
       ),
       bodyMedium: TextStyle(
+        letterSpacing: 1.1,
         color: Palette.textWhite,
         fontSize: AppFontSize.bodyMedium,
       ),
       bodySmall: TextStyle(
+        letterSpacing: 1.1,
         color: Palette.textWhite,
         fontSize: AppFontSize.bodySmall,
       ),

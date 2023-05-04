@@ -1,3 +1,4 @@
+import 'package:fgpt_ai/presentation/router/router.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -8,8 +9,17 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  _activateRoute() async {
-    await Future.delayed(Duration(seconds: 2), () {});
+  @override
+  void initState() {
+    _activateRoute();
+    super.initState();
+  }
+
+  void _activateRoute() async {
+    await Future.delayed(const Duration(seconds: 2), () {
+      AppNavigator.pushReplacement(
+          context: context, screenName: AppRouter.LANDING_SCREEN);
+    });
   }
 
   @override
