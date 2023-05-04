@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppFontSize {
-  static final bigTitle = 26.sp;
   static final titleLarge = 24.sp;
   static final titleMedium = 22.sp;
   static final titleSmall = 20.sp;

@@ -8,6 +8,10 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  _activateRoute() async {
+    await Future.delayed(Duration(seconds: 2), () {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
