@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppFontSize {
-  static final bigTitle = 26.sp;
   static final titleLarge = 24.sp;
   static final titleMedium = 22.sp;
   static final titleSmall = 20.sp;
@@ -24,9 +23,9 @@ class AppFontWeight {
 }
 
 class AppPadding {
-  static const largeScreenPadding = EdgeInsets.all(20);
-  static const commonScreenPadding = EdgeInsets.all(15);
-  static const homePadding = EdgeInsets.symmetric(vertical: 0, horizontal: 5);
+  static const commonScreenPadding = EdgeInsets.all(20);
+  static const landingScreenPadding =
+      EdgeInsets.symmetric(horizontal: 20, vertical: 40);
 }
 
 class WhiteSpace {
@@ -35,9 +34,9 @@ class WhiteSpace {
   static final gapH15 = SizedBox(height: 15.h);
   static final gapH20 = SizedBox(height: 20.h);
   static final gapH25 = SizedBox(height: 25.h);
-  static final gapW5 = SizedBox(width: 5.h);
-  static final gapW10 = SizedBox(width: 10.h);
-  static final gapW15 = SizedBox(width: 15.h);
-  static final gapW20 = SizedBox(width: 20.h);
-  static final gapW25 = SizedBox(width: 25.h);
+  static final gapW5 = SizedBox(width: 5.w);
+  static final gapW10 = SizedBox(width: 10.w);
+  static final gapW15 = SizedBox(width: 15.w);
+  static final gapW20 = SizedBox(width: 20.w);
+  static final gapW25 = SizedBox(width: 25.w);
 }
