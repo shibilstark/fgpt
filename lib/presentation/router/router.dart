@@ -2,6 +2,7 @@
 import 'package:fgpt_ai/presentation/screens/home/home_screen.dart';
 import 'package:fgpt_ai/presentation/screens/landing/landing_screen.dart';
 import 'package:fgpt_ai/presentation/screens/settings/settings_screen.dart';
+import 'package:fgpt_ai/presentation/screens/setup/setup_screen.dart';
 import 'package:fgpt_ai/presentation/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,7 @@ class AppRouter {
   static const LANDING_SCREEN = "landing/";
   static const HOME_SCREEN = "home/";
   static const SETTINGS_SCREEN = "settings/";
+  static const SETUP_SCREEN = "setup/";
 
   static Route? onGeneratedRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -30,6 +32,10 @@ class AppRouter {
       case SETTINGS_SCREEN:
         return MaterialPageRoute(
           builder: (context) => const SettingsScreen(),
+        );
+      case SETUP_SCREEN:
+        return MaterialPageRoute(
+          builder: (context) => const SetupScreen(),
         );
 
       default:
