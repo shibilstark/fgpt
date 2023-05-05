@@ -4,6 +4,7 @@ import 'package:fgpt_ai/core/injections/injection_setup.dart';
 import 'package:fgpt_ai/domain/app_db/app_db_repository.dart';
 import 'package:fgpt_ai/presentation/bloc/gpt_model/gpt_model_bloc.dart';
 import 'package:fgpt_ai/presentation/bloc/theme/theme_bloc.dart';
+import 'package:fgpt_ai/presentation/bloc/user/user_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -42,6 +43,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => getIt<GptModelBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<UserBloc>(),
         ),
       ],
       child: ScreenUtilInit(
