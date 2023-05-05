@@ -46,3 +46,4 @@ app.*.map.json
 # Custom Added
 
 lib/config/keys/keys.dart
+**.g.dart

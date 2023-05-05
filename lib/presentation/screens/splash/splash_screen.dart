@@ -1,6 +1,8 @@
 import 'dart:developer';
 
+import 'package:fgpt_ai/presentation/bloc/gpt_model/gpt_model_bloc.dart';
 import 'package:fgpt_ai/presentation/bloc/theme/theme_bloc.dart';
+import 'package:fgpt_ai/presentation/bloc/user/user_bloc.dart';
 import 'package:fgpt_ai/presentation/router/router.dart';
 import 'package:fgpt_ai/utils/preference_utils.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +18,8 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    context.read<UserBloc>().add(const LoadUserData());
+    context.read<GptModelBloc>().add(GetAllGptModels(context: context));
     _activateRoute();
     super.initState();
   }
