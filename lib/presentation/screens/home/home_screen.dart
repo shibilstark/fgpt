@@ -2,10 +2,11 @@ import 'package:fgpt_ai/config/constants/constants.dart';
 import 'package:fgpt_ai/config/themes/palette.dart';
 import 'package:fgpt_ai/presentation/bloc/theme/theme_bloc.dart';
 import 'package:fgpt_ai/presentation/widgets/keyboard_dismisser.dart';
-import 'package:fgpt_ai/presentation/widgets/theme_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../widgets/theme_switch.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -26,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               HomeChatFieldWidget(),
-              ThemeSwitch()
+              // ThemeSwitch()
             ],
           ),
         ),
@@ -88,15 +89,38 @@ class HomeChatsViewWidget extends StatelessWidget {
               ),
               WhiteSpace.gapW10,
               Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.background,
-                      borderRadius: BorderRadius.circular(10)),
-                  padding: EdgeInsets.all(10.sp),
-                  child: Text(
-                    "Flutter is an open-source software development kit which enables smooth and easy cross-platform mobile app development. You can build high quality natively compiled apps for iOS and Android quickly, without having to write the code for the two apps separately.",
-                    style: Theme.of(context).textTheme.bodySmall!,
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.background,
+                          borderRadius: BorderRadius.circular(10)),
+                      padding: EdgeInsets.all(10.sp),
+                      child: Text(
+                        "Flutter is an open-source software development kit which enables smooth and easy cross-platform mobile app development. You can build high quality natively compiled apps for iOS and Android quickly, without having to write the code for the two apps separately.",
+                        style: Theme.of(context).textTheme.bodySmall!,
+                      ),
+                    ),
+                    WhiteSpace.gapH5,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(
+                          Icons.thumb_up_outlined,
+                          size: 15,
+                          color: Theme.of(context).colorScheme.onBackground,
+                        ),
+                        WhiteSpace.gapW10,
+                        Icon(
+                          Icons.thumb_down_outlined,
+                          size: 15,
+                          color: Theme.of(context).colorScheme.onBackground,
+                        ),
+                        WhiteSpace.gapW5,
+                      ],
+                    )
+                  ],
                 ),
               )
             ],
@@ -104,7 +128,7 @@ class HomeChatsViewWidget extends StatelessWidget {
         ],
       ),
       separatorBuilder: (context, index) => WhiteSpace.gapH25,
-      itemCount: 2,
+      itemCount: 10,
     );
   }
 }
