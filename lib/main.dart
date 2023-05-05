@@ -1,5 +1,7 @@
+import 'package:fgpt_ai/config/build_config/build_config.dart';
 import 'package:fgpt_ai/config/themes/custom_themes.dart';
 import 'package:fgpt_ai/core/injections/injection_setup.dart';
+import 'package:fgpt_ai/domain/app_db/app_db_repository.dart';
 import 'package:fgpt_ai/presentation/bloc/theme/theme_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,6 +15,18 @@ void main() async {
 
 Future<void> initServices() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  BuildConfig.instantiate(
+    environment: EvnType.dev,
+    config: EnvironmentConfig(
+      appName: "FGPT",
+      baseUrl: "",
+      requestTimeOut: const Duration(seconds: 20),
+    ),
+  );
+
+  await getIt<AppDbRepository>().initializeDB();
+
   await configureInjection();
 }
 

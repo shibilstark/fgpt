@@ -1,5 +1,6 @@
 import 'package:fgpt_ai/config/constants/constants.dart';
 import 'package:fgpt_ai/config/themes/palette.dart';
+import 'package:fgpt_ai/data/gpt/remote/gpt_remote.dart';
 import 'package:fgpt_ai/presentation/bloc/theme/theme_bloc.dart';
 import 'package:fgpt_ai/presentation/widgets/keyboard_dismisser.dart';
 import 'package:flutter/material.dart';
@@ -154,14 +155,19 @@ class HomeChatFieldWidget extends StatelessWidget {
           WhiteSpace.gapW10,
           BlocBuilder<ThemeBloc, ThemeState>(
             builder: (context, state) {
-              return CircleAvatar(
-                radius: 20,
-                backgroundColor:
-                    state.isDarkMode ? Palette.textBlack : Palette.primary,
-                child: Icon(
-                  Icons.send,
-                  color: Palette.white,
-                  size: 20.sp,
+              return InkWell(
+                onTap: () async {
+                  await GptRemote.getProcessingModels();
+                },
+                child: CircleAvatar(
+                  radius: 20,
+                  backgroundColor:
+                      state.isDarkMode ? Palette.textBlack : Palette.primary,
+                  child: Icon(
+                    Icons.send,
+                    color: Palette.white,
+                    size: 20.sp,
+                  ),
                 ),
               );
             },
