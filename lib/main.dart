@@ -2,6 +2,7 @@ import 'package:fgpt_ai/config/build_config/build_config.dart';
 import 'package:fgpt_ai/config/themes/custom_themes.dart';
 import 'package:fgpt_ai/core/injections/injection_setup.dart';
 import 'package:fgpt_ai/domain/app_db/app_db_repository.dart';
+import 'package:fgpt_ai/presentation/bloc/gpt_model/gpt_model_bloc.dart';
 import 'package:fgpt_ai/presentation/bloc/theme/theme_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,9 +26,8 @@ Future<void> initServices() async {
     ),
   );
 
-  await getIt<AppDbRepository>().initializeDB();
-
   await configureInjection();
+  await getIt<AppDbRepository>().initializeDB();
 }
 
 class MyApp extends StatelessWidget {
@@ -39,6 +39,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => ThemeBloc(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<GptModelBloc>(),
         ),
       ],
       child: ScreenUtilInit(

@@ -2,6 +2,7 @@ import 'package:fgpt_ai/config/constants/constants.dart';
 import 'package:fgpt_ai/config/themes/palette.dart';
 import 'package:fgpt_ai/data/gpt/remote/gpt_remote.dart';
 import 'package:fgpt_ai/presentation/bloc/theme/theme_bloc.dart';
+import 'package:fgpt_ai/presentation/router/router.dart';
 import 'package:fgpt_ai/presentation/widgets/keyboard_dismisser.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -256,7 +257,10 @@ class HomeAppBarWidget extends StatelessWidget {
                   ),
             ),
             InkWell(
-                onTap: () {},
+                onTap: () {
+                  AppNavigator.push(
+                      context: context, screenName: AppRouter.SETTINGS_SCREEN);
+                },
                 child: const Icon(
                   Icons.settings,
                 ))
