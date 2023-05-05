@@ -23,7 +23,8 @@ class AppFontWeight {
 }
 
 class AppPadding {
-  static const commonScreenPadding = EdgeInsets.all(20);
+  static const commonScreenPadding =
+      EdgeInsets.symmetric(horizontal: 20, vertical: 5);
   static const landingScreenPadding =
       EdgeInsets.symmetric(horizontal: 20, vertical: 40);
 }
