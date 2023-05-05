@@ -32,6 +32,8 @@ class MyApp extends StatelessWidget {
           splitScreenMode: true,
           minTextAdapt: true,
           builder: (context, child) {
+            context.read<ThemeBloc>().add(const LoadTheme());
+
             return BlocBuilder<ThemeBloc, ThemeState>(
               builder: (context, state) {
                 return MaterialApp(

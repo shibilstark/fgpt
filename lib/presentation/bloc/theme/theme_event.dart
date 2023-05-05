@@ -21,3 +21,7 @@ class ChangeTheme extends ThemeEvent {
   @override
   List<Object> get props => [isDarkMode];
 }
+
+class ChangeLaunchMode extends ThemeEvent {
+  const ChangeLaunchMode();
+}

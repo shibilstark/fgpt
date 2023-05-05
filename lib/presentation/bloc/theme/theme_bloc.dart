@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -11,18 +13,31 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   ThemeBloc() : super(const ThemeState()) {
     on<LoadTheme>(_loadTheme);
     on<ChangeTheme>(_changeTheme);
+    on<ChangeLaunchMode>(_changeInitialLaunch);
   }
 
-  _loadTheme(LoadTheme event, Emitter<ThemeState> emit) async {
+  void _loadTheme(LoadTheme event, Emitter<ThemeState> emit) async {
     final isDarkMode = await _getBool(PreferenceConstants.isDarkMode);
+    final isInitialLaunch =
+        await _getBool(PreferenceConstants.isLaunchedBefore);
 
-    emit(state.copyWith(isDarkMode: isDarkMode));
+    emit(state.copyWith(
+      isDarkMode: isDarkMode,
+      isBeforeLaunchedApp: isInitialLaunch,
+    ));
   }
 
-  _changeTheme(ChangeTheme event, Emitter<ThemeState> emit) async {
+  void _changeTheme(ChangeTheme event, Emitter<ThemeState> emit) async {
     await _setBool(PreferenceConstants.isDarkMode, event.isDarkMode);
 
     emit(state.copyWith(isDarkMode: !state.isDarkMode));
+  }
+
+  void _changeInitialLaunch(
+      ChangeLaunchMode event, Emitter<ThemeState> emit) async {
+    await _setBool(PreferenceConstants.isLaunchedBefore, true);
+
+    emit(state.copyWith(isBeforeLaunchedApp: true));
   }
 
   Future _setBool(String key, bool val) async {

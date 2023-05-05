@@ -8,7 +8,7 @@ class ThemeState extends Equatable {
 
   const ThemeState({
     this.isDarkMode = false,
-    this.isBeforeLaunchedApp = true,
+    this.isBeforeLaunchedApp = false,
   });
 
   @override
